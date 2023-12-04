@@ -56,3 +56,4 @@ while True:
         elif resp != 'None':
             engine.text_speech(text)
     cam.release()
+    

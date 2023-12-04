@@ -1,11 +1,15 @@
 import io
 from google.oauth2 import service_account
 from google.cloud import vision
-import dialogflow_v2 as dialogflow
+#import dialogflow_v2 as dialogflow
+#
+# 
+import google.cloud as dialogflow
 import cv2
 
 def detect_text(cam, engine):
-    credentials = service_account.Credentials.from_service_account_file('aj.json')
+    #credentials = service_account.Credentials.from_service_account_file('aj.json')
+    credentials = service_account.Credentials.from_service_account_file('bamboo-shift-406714-963e8214b3590.json')
     client = vision.ImageAnnotatorClient(credentials=credentials)
     ret, content = cam.read()
     cv2.imwrite('op.jpg', content)

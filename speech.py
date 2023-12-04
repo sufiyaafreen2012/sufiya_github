@@ -13,13 +13,13 @@ from nltk.stem.wordnet import WordNetLemmatizer
 
 class speech_to_text():
     def __init__(self):
-       en_voice_id = "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_ZIRA_11.0"
-       ru_voice_id = "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_RU-RU_IRINA_11.0"
+       en_voice_id = r'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_ZIRA_11.0'
+       #ru_voice_id = "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_RU-RU_IRINA_11.0"
        self.recognizer = sr.Recognizer()
        self.microphone = sr.Microphone()
        self.engine = pyttsx3.init();
        self.engine.setProperty('voice', en_voice_id)
-       self.credentials = service_account.Credentials.from_service_account_file('api-key.json')
+       self.credentials = service_account.Credentials.from_service_account_file(r'C:\Users\Admin\Downloads\Assistant-for-visually-impaired-master.zip\Assistant-for-visually-impaired-master\bamboo-shift-406714-963e8214b3590.json')
 
 
     def recognize_speech_from_mic(self):
